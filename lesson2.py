@@ -1,8 +1,7 @@
 def change_sys(num, base):
     res=""
-    alph = "qwertyuiopasdfghjklzxcvbnm"
-    list(alph).sort
-    alph= "0123456789"+alph
+    alph = "0123456789qwertyuiopasdfghjklzxcvbnm"
+    alph.sorted
     while num>0:
         res = alph[int(num%base)] + res
         num=num//base
