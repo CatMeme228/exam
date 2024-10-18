@@ -20,3 +20,20 @@ res= combinations_with_replacement(alph, 2)#сочитания с повторо
 for i in res:
     print(''.join(i))
 
+#2.22
+res=[]
+for N in range(1,1000):
+    bin_n=bin(N)[2:]
+    if N%3==0:
+        bin_n+="000"
+    else:
+        bin_n+=bin(N%3*3)[2::]
+    res.append(int(bin_n, 2))
+print(*res)
+res.sort()
+max_amount=-1
+for left in range(len(res)-1):
+    for right in range(left+1, len(res)):
+        if res[right]-res[left]<=60:
+            max_amount=max(max_amount, right-left)
+print(max_amount)
