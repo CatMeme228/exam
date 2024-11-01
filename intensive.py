@@ -98,7 +98,17 @@
 # print(*b)
 
 #удалить 20
-a=[1,3,20,5,6,20,12,20,6]
-while (20 in a):
-    a.remove(20)
-print(a)
+# a=[1,3,20,5,6,20,12,20,6]
+# while (20 in a):
+#     a.remove(20)
+# print(a)
+
+res=''
+base=16
+alph='0123456789QWERTYUIOPASDFGHJKLZXCVBNM'
+alph=sorted(alph)
+num=11
+while num>0:
+    res=str(alph[num%base])+res
+    num=num//base
+print(res)
