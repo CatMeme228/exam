@@ -103,12 +103,90 @@
 #     a.remove(20)
 # print(a)
 
-res=''
-base=16
-alph='0123456789QWERTYUIOPASDFGHJKLZXCVBNM'
-alph=sorted(alph)
-num=11
-while num>0:
-    res=str(alph[num%base])+res
-    num=num//base
-print(res)
+# res=''
+# base=16
+# alph='0123456789QWERTYUIOPASDFGHJKLZXCVBNM'
+# alph=sorted(alph)
+# num=11
+# while num>0:
+#     res=str(alph[num%base])+res
+#     num=num//base
+# print(res)
+
+# def sum_range(start, end):
+#     summ=0
+#     if start>end:
+#         a=end
+#         end=start
+#         start=a
+#     for i in range(start, end+1):
+#         summ=summ+i
+#     return summ
+#
+# print(sum_range(1,5))
+# print(sum_range(5,1))
+
+#факториал рекурсией
+# def fact(n):
+#     if n == 1:
+#         return 1
+#     else:
+#         return fact(n-1)*n
+# print(fact(999))
+
+#23, выучить!!!!!!!!
+# def f(x, y):
+#     if x==y:
+#         return 1
+#     if x>y:
+#         return 0
+#     if x<y:
+#         return f(x+1, y) + f(x*2, y)
+# print(f(14,210))
+
+#file
+#f=open('name.txt', 'r') r- чтение, w-запись
+
+# f=open('text.txt')
+# print(f.read()) #весь файл
+# #читать по строкам
+# for line in f:
+#     print(line)
+# f.close() #закрыть файл
+
+#with open('text.txt') as f:
+    #something
+    #something
+#файл сам откроектся и закроется
+#если файл в другой папке(не .venv), нужно использовать полное имя
+#C:/Users/text.txt
+
+#task 17
+# a=[]
+# with open('C:/Users/tolab/PycharmProjects/EGE/17_1.txt') as f:
+#     for line in f:
+#         a.append(int(line))
+# counter=0
+# summ=-999999999999999999999999999999999999999999999999
+# for i in range(len(a)-1):
+#     if abs(a[i])%3==0 or abs(a[i+1])%3==0:
+#         counter+=1
+#         if a[i]+a[i+1]>summ:
+#             summ=a[i]+a[i+1]
+# print(counter, summ)
+
+#task 24, максимум букв подряд
+# with open('24_1.txt') as f:
+#     s=f.readline()
+#
+# kol_now=1
+# kol_max=0
+#
+# for i in range(len(s)-1):
+#     if s[i]==s[i+1]:
+#         kol_now+=1
+#         if kol_now>kol_max:
+#             kol_max=kol_now
+#     else:
+#         kol_now=1
+# print(kol_max)
