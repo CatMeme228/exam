@@ -82,3 +82,46 @@
 #         z.append(a2-a1)
 # print(round(min(z)))
 
+# 6.40
+# def f(x):
+#     return ((x&18)==0)<=(((x&51)!=0)<=((x&a)!=0))
+# for a in range(1000):
+#     if all(f(x) for x in range(1000)):
+#         print(a)
+#         break
+
+# 6.34
+# def f(x,y):
+#     return ((x+2*y)<a) or (3*y>2*x) or (x>40)
+#
+# for a in range(1000):
+#     if all(f(x,y) for x in range(41) for y in range(28)):
+#         print(a)
+#         break
+
+# 6.35
+# def f(x,y):
+#     return ((x+y)<a) or (3*y>x) or (x>100)
+#
+# for a in range(1000):
+#     if all(f(x,y) for x in range(101) for y in range(35)):
+#         print(a)
+#         break
+
+#6.36
+# def f(a,b):
+#     return (2*a+4*b)>17 or (a<=x and b<x)
+#
+# for x in range(1000):
+#     if all(f(a,b) for a in range(9) for b in range(5)):
+#         print(x)
+#         break
+
+# 6.41
+# def f(x):
+#     return ((x&19==0)<=(x&56!=0))<=(x&a!=0)
+#
+# for a in range(1000):
+#     if all(f(x) for x in range(1000)):
+#         print(a)
+#         break
