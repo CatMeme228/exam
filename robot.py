@@ -24,3 +24,10 @@ def f(s,e):
     if s>e: return 0
     return f(s+1,e)+f(s+3,e)+f(s*2,e)
 print(f(4,11)*f(11,17)*f(17,20))
+
+def f(s,e):
+    if s==e: return 1
+    if s>e: return 0
+    if s==25: return 0
+    return f(s+1,e)+f(s*2,e)
+print(f(14,29)*f(2,14))
