@@ -31,3 +31,24 @@ def f(s,e):
     if s==25: return 0
     return f(s+1,e)+f(s*2,e)
 print(f(14,29)*f(2,14))
+
+
+#13.15
+#происходит сортировка
+
+from turtle import *
+setworldcoordinates(-7,-7,7,7)
+tracer(0)
+left(90)
+penup()
+forward(5)
+pendown()
+for i in range(4):
+    right(120)
+    forward(5)
+penup()
+for x in range(-7,7):
+    for y in range(-7,7):
+        goto(x,y)
+        dot(5,'red')
+done()
