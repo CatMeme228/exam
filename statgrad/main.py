@@ -89,7 +89,7 @@ def moves(x):
 from sys import *
 setrecursionlimit(99999999)
 def f(s,e):
-    if s>=92: return True
+    if s>=92: return e%2==0
     if e==0: return False
     act=[]
     z=moves(s)
