@@ -122,3 +122,15 @@ def change_sys(n,base):
 #         for p in permutations("xyzw"):
 #             if [f(**dict(zip(p, row))) for row in table]==[1,1,1]:
 #                 print(p)
+
+#2
+def f(s,p):
+    if s>=29:
+        return p%2==0
+    if p==0:
+        return False
+    act=[f(s+1,p-1), f(s*2,p-1)]
+    return any(act) if (p-1)%2==0 else all(act)
+print('19', [s for s in range(1,29) if f(s,2)])
+print('20', [s for s in range(1,29) if f(s,3) and not f(s,1)])
+print('21', [s for s in range(1,29) if f(s,4) and not f(s,2)])

@@ -62,25 +62,23 @@
 #             if [f(**dict(zip(p,row))) for row in table]== [0,0,0]:
 #                 print(p)
 
-#7.12
-def f(x,y,z):
-    return (x and (not y) or z) and (y and z or (not y))
 
-from itertools import permutations
+#для двух функций
+from itertools import *
+def f1(x,y,z,w):
+    return (x==y) and (w<=z)
 
-table_0=[
-    [0,0,0],
-    [0,0,1],
-    [0,1,1]
-]
+def f2(x,y,z,w):
+    return (x<=y)<=(w==z)
 
-table_1=[
-    [0,1,0],
-    [1,0,0],
-    [1,0,1],
-    [1,1,0],
-    [1,1,1]
-]
-for p in permutations("xyz"):
-    if [f(**dict(zip(p, row_0))) for row_0 in table_0]==[0,0,0] and [f(**dict(zip(p, row_1))) for row_1 in table_1]==[1,1,1]:
-        print(p)
+for i in product([0,1], repeat=4):
+    table=[
+        (1, i[0], 1, 1),
+        (0, 1, 0, i[1]),
+        (i[2], 0, 0, i[3]),
+    ]
+    if len(table)==len(set(table)):
+        for p in permutations('xyzw'):
+            if [f1(**dict(zip(p,row))) for row in table]==[1,1,0]:
+                if [f2(**dict(zip(p, row))) for row in table] == [0, 0, 0] or [f2(**dict(zip(p, row))) for row in table] == [0, 1, 0]:
+                    print(p)

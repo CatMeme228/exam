@@ -1,7 +1,7 @@
 # for x in range(1000000):
 #     if (((x-1)<x)<=(40>x**2)) == 1 and x!=0:
 #         print(x)
-
+from binascii import a2b_qp
 #6.33
 # def f(x,y):
 #     return (x+3 * y <a) or (y>2*x) or (x>78)
@@ -82,6 +82,37 @@
 #         z.append(a2-a1)
 # print(round(min(z)))
 
+# from itertools import combinations
+#
+# def f(x):
+#     p= 15<=x<40
+#     q=21<x<=63
+#     a= a1<=x<=a2
+#     return (p <= ((q and (not a))<= (not p)))
+#
+# z=[]
+# ox =[i/4 for i in range(15*4, (63+1)*4)]
+# for a1, a2 in combinations(ox, 2):
+#     if all(f(x) for x in ox):
+#         z.append(a2-a1)
+# print((min(z)))
+
+# from itertools import combinations
+#
+# def f(x):
+#     p=11<=x<25
+#     q=15<=15<=40
+#     a=a1<=x<=a2
+#     return ((q<=a)<=p)<=p
+#
+# z=[]
+#
+# ox=[i/4 for i in range(11*4, 41*4)]
+#
+# for a1,a2 in combinations(ox,2):
+#     if all(f(x) for x in ox):
+#         z.append(a2-a1)
+# print(min(z))
 # 6.40
 # def f(x):
 #     return ((x&18)==0)<=(((x&51)!=0)<=((x&a)!=0))
