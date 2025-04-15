@@ -1255,70 +1255,92 @@ from turtledemo.sorting_animate import enable_keys
 # print(r)
 
 #dbscan
-from math import dist
-def cent(cl):
-    minr=10**10
-    for p in cl:
-        s=sum([dist(p1,p) for p1 in cl]) # ищем dist при помощи встроенной функции
-        if s<minr:
-            res=p
-            minr=s
-    return res
+# from math import dist
+# def cent(cl):
+#     minr=10**10
+#     for p in cl:
+#         s=sum([dist(p1,p) for p1 in cl]) # ищем dist при помощи встроенной функции
+#         if s<minr:
+#             res=p
+#             minr=s
+#     return res
+#
+# f=open('files/27A_4_1.txt')
+# a=[[float(x) for x in s.replace(',', '.').split()] for s in f]
+#
+# vsecl=[]
+# E=0.8 # дистанция между точками
+#
+# while len(a)>0:
+#     tcl=[a[-1]]
+#     a.pop()
+#     for p in tcl:
+#         bliz_t=[t1 for t1 in a if dist(t1,p)<E] # ищем соседей
+#         for x in bliz_t:
+#             tcl.append(x) # добавляем в текущий
+#             a.remove(x) # удаляем из общего
+#     vsecl.append(tcl)
+#
+# print('check:', len(vsecl[0])+len(vsecl[1]),len(vsecl)) # все ли точки вошли
+# r1=[]
+# r2=[]
+# for cl in vsecl: # удаляем аномалии при помощи проверки длины, аномалия - кластер из одной точки
+#     if len(cl)>1:
+#         r1.append(cent(cl)[0])
+#         r2.append(cent(cl)[1])
+# print(sum(r1)/len(r1)*10_000)
+# print(sum(r2)/len(r2)*10_000)
+# f.close()
+#
+#
+# print()
+#
+# # аналогично
+# f=open('files/27B_4_1.txt')
+# a=[[float(x) for x in s.replace(',', '.').split()] for s in f]
+#
+# vsecl=[]
+# E=0.7
+#
+# while len(a)>0:
+#     tcl=[a[-1]]
+#     a.pop()
+#     for p in tcl:
+#         bliz_t=[t1 for t1 in a if dist(t1,p)<E]
+#         for x in bliz_t:
+#             tcl.append(x)
+#             a.remove(x)
+#     vsecl.append(tcl)
+#
+# print('check:',len(vsecl[0])+len(vsecl[1])+len(vsecl[2]),len(vsecl))
+# r1=[]
+# r2=[]
+# for cl in vsecl:
+#     if len(cl)>1:
+#         r1.append(cent(cl)[0])
+#         r2.append(cent(cl)[1])
+# print(sum(r1)/len(r1)*10_000)
+# print(sum(r2)/len(r2)*10_000)
+# f.close()
 
-f=open('files/27A_4_1.txt')
-a=[[float(x) for x in s.replace(',', '.').split()] for s in f]
+#5
+# res=[]
+# for n in range(4,1000):
+#     r = bin(n)[2:]
+#
+#     if n % 3 == 0:
+#         r=r+r[-3:]
+#     else:
+#         r = r + (bin((n%3)*3)[2::])
+#     if int(r,2)>151:
+#         res.append(int(r,2))
+#print(min(res)) #смотри не первое вхождение, а все
 
-vsecl=[]
-E=0.8 # дистанция между точками
-
-while len(a)>0:
-    tcl=[a[-1]]
-    a.pop()
-    for p in tcl:
-        bliz_t=[t1 for t1 in a if dist(t1,p)<E] # ищем соседей
-        for x in bliz_t:
-            tcl.append(x) # добавляем в текущий
-            a.remove(x) # удаляем из общего
-    vsecl.append(tcl)
-
-print('check:', len(vsecl[0])+len(vsecl[1]),len(vsecl)) # все ли точки вошли
-r1=[]
-r2=[]
-for cl in vsecl: # удаляем аномалии при помощи проверки длины, аномалия - кластер из одной точки
-    if len(cl)>1:
-        r1.append(cent(cl)[0])
-        r2.append(cent(cl)[1])
-print(sum(r1)/len(r1)*10_000)
-print(sum(r2)/len(r2)*10_000)
-f.close()
-
-
-print()
-
-# аналогично
-f=open('files/27B_4_1.txt')
-a=[[float(x) for x in s.replace(',', '.').split()] for s in f]
-
-vsecl=[]
-E=0.7
-
-while len(a)>0:
-    tcl=[a[-1]]
-    a.pop()
-    for p in tcl:
-        bliz_t=[t1 for t1 in a if dist(t1,p)<E]
-        for x in bliz_t:
-            tcl.append(x)
-            a.remove(x)
-    vsecl.append(tcl)
-
-print('check:',len(vsecl[0])+len(vsecl[1])+len(vsecl[2]),len(vsecl))
-r1=[]
-r2=[]
-for cl in vsecl:
-    if len(cl)>1:
-        r1.append(cent(cl)[0])
-        r2.append(cent(cl)[1])
-print(sum(r1)/len(r1)*10_000)
-print(sum(r2)/len(r2)*10_000)
-f.close()
+res=[]
+for n in range(3,1000):
+    r = bin(n)[2:]
+    r+=r[-2]
+    r+=r[1]
+    if int(r,2)>180:
+        res.append(n)
+print(min(res))
