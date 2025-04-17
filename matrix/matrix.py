@@ -1336,11 +1336,120 @@ from turtledemo.sorting_animate import enable_keys
 #         res.append(int(r,2))
 #print(min(res)) #смотри не первое вхождение, а все
 
-res=[]
-for n in range(3,1000):
-    r = bin(n)[2:]
-    r+=r[-2]
-    r+=r[1]
-    if int(r,2)>180:
-        res.append(n)
-print(min(res))
+# res=[]
+# for n in range(3,1000):
+#     r = bin(n)[2:]
+#     r+=r[-2]
+#     r+=r[1]
+#     if int(r,2)>180:
+#         res.append(n)
+# print(min(res))
+
+#27 старое
+# кратно 6
+# f=open('files/27_1B.txt')
+# res,k1,k2,k3,k6=0,0,0,0,0
+# n=int(f.readline())
+# a=[int(x) for x in f.readlines()]
+# for i in range(n):
+#     if a[i]%6==0:
+#         res+=k6+k3+k2+k1
+#         k6+=1
+#     elif a[i]%3==0:
+#         res+=k2+k6
+#         k3+=1
+#     elif a[i]%2==0:
+#         res+=k3+k6
+#         k2+=1
+#     else:
+#         res+= k6
+#         k1+=1
+# print(res)
+
+# f=open('C:/Users/tolab/PycharmProjects/EGE/matrix/files/27_1B.txt')
+# res,k0,k1,k2,k3,k4,k5,k6,k7,k8,k9=0,0,0,0,0,0,0,0,0,0,0
+# n=int(f.readline())
+# a=[int(x) for x in f.readlines()]
+# for i in range(n):
+#     if a[i]%10==0:
+#         res+=k0
+#         k0+=1
+#     elif a[i]%10==1:
+#         res+=k9
+#         k1+=1
+#     elif a[i]%10==2:
+#         res+=k8
+#         k2+=1
+#     elif a[i]%10==3:
+#         res+=k7
+#         k3+=1
+#     elif a[i]%10==4:
+#         res+=k6
+#         k4+=1
+#     elif a[i]%10==5:
+#         res+=k5
+#         k5+=1
+#     elif a[i]%10==6:
+#         res+=k4
+#         k6+=1
+#     elif a[i]%10==7:
+#         res+=k3
+#         k7+=1
+#     elif a[i]%10==8:
+#         res+=k2
+#         k8+=1
+#     elif a[i]%10==9:
+#         res+=k1
+#         k9+=1
+# print(res)
+
+#не кратно 14
+#f=open('files/27_1B.txt')
+# res,k1,k2,k7,k14=0,0,0,0,0
+# kp=0
+# n=int(f.readline())
+# a=[int(x) for x in f.readlines()]
+# for i in range(n):
+#     if a[i]%14==0:
+#         res+=k14+k7+k2+k1
+#         k14+=1
+#     elif a[i]%7==0:
+#         res+=k14+k2
+#         k7+=1
+#     elif a[i]%2==0:
+#         res+=k7+k14
+#         k2+=1
+#     else:
+#         res+= k14
+#         k1+=1
+#     kp+=i
+# print(kp-res)
+
+#сумма кратна 91
+# f=open('C:/Users/tolab/PycharmProjects/EGE/matrix/files/27_1B.txt')
+# ost=[0]*91
+# res=0
+# n=int(f.readline())
+# a=[int(x) for x in f.readlines()]
+# for i in range(n):
+#     ost91=a[i]%91
+#     res+=ost[(91-ost91)%91]
+#     ost[ost91]+=1
+# print(res)
+
+#минимальная сумма кратна 93
+f=open('C:/Users/tolab/PycharmProjects/EGE/matrix/files/27_1B.txt')
+ost=[10**10]*93
+res=0
+n=int(f.readline())
+mins=10**10
+a=[int(x) for x in f.readlines()]
+print('read')
+for i in range(n):
+    ost93=a[i]%93
+    i_nap=(93-ost93)%93
+    if a[i]+ost[i_nap]<mins:
+        mins= a[i]+ost[i_nap]
+    if a[i]<ost[ost93]:
+        ost[ost93]=a[i]
+print(mins)
