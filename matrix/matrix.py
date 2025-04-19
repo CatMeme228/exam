@@ -1438,18 +1438,61 @@ from turtledemo.sorting_animate import enable_keys
 # print(res)
 
 #минимальная сумма кратна 93
-f=open('C:/Users/tolab/PycharmProjects/EGE/matrix/files/27_1B.txt')
-ost=[10**10]*93
-res=0
-n=int(f.readline())
-mins=10**10
-a=[int(x) for x in f.readlines()]
-print('read')
-for i in range(n):
-    ost93=a[i]%93
-    i_nap=(93-ost93)%93
-    if a[i]+ost[i_nap]<mins:
-        mins= a[i]+ost[i_nap]
-    if a[i]<ost[ost93]:
-        ost[ost93]=a[i]
-print(mins)
+# f=open('C:/Users/tolab/PycharmProjects/EGE/matrix/files/27_1B.txt')
+# ost=[10**10]*93
+# res=0
+# n=int(f.readline())
+# mins=10**10
+# for i in range(n):
+#     a=int(f.readline())
+#     ost93= a%93
+#     i_nap=(93-ost93)%93
+#     if a+ost[i_nap]<mins:
+#         mins= a+ost[i_nap]
+#     if a<ost[ost93]:
+#         ost[ost93]=a
+# print(mins)
+
+#максимальна кратна 97
+# f=open('C:/Users/tolab/PycharmProjects/EGE/matrix/files/27_1B.txt')
+# ost=[0]*97
+# n=int(f.readline())
+# maxs=0
+# for i in range(n):
+#     a=int(f.readline())
+#     ost97= a%97
+#     nap=(97-ost97)%97
+#     if a+ost[nap]>maxs and ost[nap]>a and ost[nap]!=0:
+#         maxs=a+ost[nap]
+#     ost[ost97]=max(ost[ost97],a)
+# print(maxs)
+
+from itertools import *
+# i=1
+# for a in product('АЛПЦЯ',repeat=5):
+#     if a.count('А')<=1 and a.count('П')==2 and 'Л' not in a:
+#         print(i)
+#         break
+#     i+=1
+#
+# print(abs(int('23100',4)-int('31020',4))+1)
+
+def ch_ncht(a):
+    flag=-1
+    for i in a:
+        if flag==-1:
+            flag= int(i)%2
+        elif flag==int(i)%2:
+            return False
+        else:
+            flag=int(i)%2
+    return True
+
+i=0
+for a in product('0123456789',repeat=8):
+    if a[0]!='0' and (a[-1]=='5' or a[-1]=='0'):
+        if len(a)==len(set(a)):
+            if ch_ncht(a):
+                i+=1
+                print(a,3)
+print(i)
