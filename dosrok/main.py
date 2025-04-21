@@ -172,3 +172,58 @@
 #                 r+=1
 # print(r)
 
+# from turtle import *
+#
+# tracer(0)
+# setworldcoordinates(-20, -20, 20, 20)
+# left(90)
+# for i in range(4):
+#     right(45)
+#     forward(8)
+#     right(90)
+#     forward(5)
+#     penup()
+#     goto(0, 0)
+#     right(135)
+#     pendown()
+# pendown()
+# penup()
+# for x in range(-20, 20):
+#     for y in range(-20, 20):
+#         if x ** 2 + y ** 2 >= 10 ** 2:
+#             setpos(x, y)
+#             dot(20, 'red')
+# exitonclick()
+
+# f = open('txts/09.csv')
+#
+# def uni(x):
+#     x.sort()
+#     tmp = 0
+#     for i in range(len(x) - 2):
+#         if x[i] == x[i + 1] == x[i + 2]:
+#             tmp += 1
+#             res = x[i]
+#     if tmp == 1:
+#         return res
+#     else:
+#         return 0
+#
+# r=0
+# for s in f:
+#     n = [int(x) for x in s.split(';')]
+#     check = uni(n)
+#     if check != 0 and (3*check)**2>(sum(n)-check*3)**2 and len(set(n))==4:
+#         print(n)
+#         r+=1
+# print(r)
+
+for n in range(4,10**10):
+    s='3'+'5'*n
+    while '25' in s or '355' in s or '555' in s:
+        s=s.replace('25','5',1)
+        s=s.replace('355','52',1)
+        s=s.replace('555','3',1)
+    if len(s)==s.count('5'):
+        print(n)
+        break
