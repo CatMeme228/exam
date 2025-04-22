@@ -1,16 +1,9 @@
-#17
+# 17
 # from fnmatch import *
 # for i in range(1991,10**8+1, 1991):
 #     s=str(i)
 #     if fnmatch(s, "2*1?71") and i%1991==0:
 #         print(i, i//1991)
-from array import array
-from itertools import filterfalse, product
-from math import trunc
-from pdb import runctx
-from pickle import FALSE
-from turtledemo.sorting_animate import enable_keys
-
 
 # from fnmatch import *
 # for i in range(3123, 10**8+1, 3123):
@@ -68,7 +61,7 @@ from turtledemo.sorting_animate import enable_keys
 #
 # print(res)
 
-#поиск делитей
+# поиск делитей
 # res = 0
 # i=36
 # for j in range(1, int(i**0.5)+1):
@@ -77,7 +70,6 @@ from turtledemo.sorting_animate import enable_keys
 #     elif i % j == 0:
 #         res += 1
 # print(int(res*2))
-
 
 
 # for i in range(10271400, 10272501):
@@ -546,7 +538,7 @@ from turtledemo.sorting_animate import enable_keys
 #             print(i, i//1234)
 
 
-#26.1
+# 26.1
 # with open('text.txt') as f:
 #     d,n = map(int, f.readline().split()) #1ая строка
 #     a=[int(x) for x in f]
@@ -565,7 +557,7 @@ from turtledemo.sorting_animate import enable_keys
 #             z+=1
 #     print(k,z)
 
-#26.2
+# 26.2
 # with open('text.txt') as f:
 #     money,kolvo =map(int, f.readline().split())
 #     a=[int(x) for x in f]
@@ -584,7 +576,7 @@ from turtledemo.sorting_animate import enable_keys
 #     ost_dr=[int(x) for x in ob if x<=(svo-s+pos)]
 #     print(res1+2+len(enc), max(ost_dr))
 
-#26.3
+# 26.3
 # with open('text.txt') as f:
 #     kolvo=int(f.readline())
 #     a = [int(x) for x in f]
@@ -597,7 +589,7 @@ from turtledemo.sorting_animate import enable_keys
 #             tmp=a[i+1]
 #     print(len(z), min(z))
 
-#26.4
+# 26.4
 # with open('text.txt') as f:
 #     kolvo=int(f.readline())
 #     a = [int(x) for x in f]
@@ -611,7 +603,7 @@ from turtledemo.sorting_animate import enable_keys
 #             tmp=a[i+1]
 #     print(len(z), max(z))
 
-#26.5
+# 26.5
 # with open('text.txt') as f:
 #     kolvo=int(f.readline())
 #     matr=[]
@@ -627,7 +619,7 @@ from turtledemo.sorting_animate import enable_keys
 #                 res2=matr[i][1]+1
 #                 print(res1,res2) #берём 1ое вхождение последнего ряда
 
-#26.6
+# 26.6
 # from math import ceil
 # with open('text.txt') as f:
 #     kolvo=int(f.readline())
@@ -642,7 +634,7 @@ from turtledemo.sorting_animate import enable_keys
 #     res2= max(s[:ksale])
 #     print(ceil(res1), res2)
 
-#26.10
+# 26.10
 # with open('text.txt') as f:
 #     n,km =map(int, f.readline().split())
 #     matr=[]
@@ -656,7 +648,7 @@ from turtledemo.sorting_animate import enable_keys
 #     res2=matr[km-1][1]
 #     print(res1,res2)
 
-#26.11
+# 26.11
 # with open('text.txt') as f:
 #     n,km =map(int, f.readline().split())
 #     matr=[]
@@ -673,7 +665,7 @@ from turtledemo.sorting_animate import enable_keys
 #     k= len([1 for x in matr if x[0]==matr[km-1][0]])
 #     print(k)
 
-#2
+# 2
 # from itertools import *
 # def f(a,b,c,d):
 #     return ((not a) and (not b)) or (b==c) or d
@@ -690,7 +682,7 @@ from turtledemo.sorting_animate import enable_keys
 #                 print(p)
 
 
-#26.71
+# 26.71
 # with open('text.txt') as f:
 #     k=int(f.readline())
 #     n=int(f.readline())
@@ -712,7 +704,7 @@ from turtledemo.sorting_animate import enable_keys
 #                 break
 #    print(res1, res2)
 
-#26.72
+# 26.72
 # with open('text.txt') as f:
 #     res1,res2=0,0
 #     n= int(f.readline())
@@ -749,7 +741,7 @@ from turtledemo.sorting_animate import enable_keys
 #                 res2+=1
 #     print(res1,res2)
 
-#26.73
+# 26.73
 # with open('text.txt') as f:
 #     res1,res2=0,0
 #     m,n= map(int, f.readline().split())
@@ -782,7 +774,7 @@ from turtledemo.sorting_animate import enable_keys
 #             res2=poslch[i]
 #     print(res1,res2)
 
-#6.74
+# 6.74
 # with open('text.txt') as f:
 #     res1,res2=0,0
 #     n= int(f.readline())
@@ -815,7 +807,7 @@ from turtledemo.sorting_animate import enable_keys
 #                 res2+=1
 #     print(res1,res2)
 
-#12
+# 12
 # for n in range(3,100):
 #     a='2'+'5'*n
 #     while '25' in a or '355' in a or '555' in a:
@@ -829,7 +821,7 @@ from turtledemo.sorting_animate import enable_keys
 #         print(n)
 #         break
 
-#не более одной точки
+# не более одной точки
 # with open('text.txt') as f:
 #     a=f.readline()
 # a=a.split('.')
@@ -839,7 +831,7 @@ from turtledemo.sorting_animate import enable_keys
 #     m=max(m,t)
 # print(m)
 
-#не более 2 точек
+# не более 2 точек
 # with open('text.txt') as f:
 #     a=f.readline()
 # a=a.split('.')
@@ -858,7 +850,7 @@ from turtledemo.sorting_animate import enable_keys
 #        m=max(m, len(a[i])+1+len(a[i+1]))
 # print(m)
 
-#не более 140 х
+# не более 140 х
 # with open('text.txt') as f:
 #     a=f.readline()
 # a=a.split('X')
@@ -871,7 +863,7 @@ from turtledemo.sorting_animate import enable_keys
 #     m=max(m,z)
 # print(m)
 
-#не менее 140 х
+# не менее 140 х
 # f = open('text.txt')
 # s = f.readline() # считываем файл
 # s = s.split('X') # сплитим по иксам
@@ -888,7 +880,7 @@ from turtledemo.sorting_animate import enable_keys
 #     mink = min(mink, tk) # проверяем на максимальность
 # print(mink)
 
-#a 35 раз
+# a 35 раз
 # with open('text.txt') as f:
 #     s=f.readline()
 # const=35
@@ -901,7 +893,7 @@ from turtledemo.sorting_animate import enable_keys
 #     kmin=min(kmin, kt)
 # print(kmin)
 
-#a не менее 500
+# a не менее 500
 # f=open('text.txt')
 # s=f.readline()
 # f.close()
@@ -917,7 +909,7 @@ from turtledemo.sorting_animate import enable_keys
 #     kmin=min(kmin, tk)
 # print(kmin)
 
-#AB 21 раз
+# AB 21 раз
 # with open('text.txt') as f:
 #     s=f.readline()
 # s=s.replace('AB', 'A*B')
@@ -933,7 +925,7 @@ from turtledemo.sorting_animate import enable_keys
 #     maxk=max(maxk, tk)
 # print(maxk)
 
-#не более 700 A и без E
+# не более 700 A и без E
 # with open('text.txt') as f:
 #     sn=f.readline()
 # sn=sn.split('E')
@@ -952,7 +944,7 @@ from turtledemo.sorting_animate import enable_keys
 #             maxt=max(maxt, su)
 # print(maxt)
 
-#a 2024 раз
+# a 2024 раз
 # f = open('text.txt')
 # a = f.readline()
 # a = a.split('A')
@@ -968,7 +960,7 @@ from turtledemo.sorting_animate import enable_keys
 #     mins = min(mins,td)
 # print(mins)
 
-#a не менее 490
+# a не менее 490
 # f=open('text.txt')
 # s=f.readline()
 # f.close()
@@ -984,7 +976,7 @@ from turtledemo.sorting_animate import enable_keys
 #     kmin=min(kmin, tk)
 # print(kmin)
 
-#не более 700 A и без E
+# не более 700 A и без E
 # with open('text.txt') as f:
 #     sn=f.readline()
 # sn=sn.split('E')
@@ -1003,7 +995,7 @@ from turtledemo.sorting_animate import enable_keys
 #             maxt=max(maxt, su)
 # print(maxt)
 
-#a 35 раз
+# a 35 раз
 # f = open('24.txt')
 # s = f.readline()
 # s = 'A' + s + 'A'
@@ -1029,7 +1021,7 @@ from turtledemo.sorting_animate import enable_keys
 #     F(n - 3)
 # print(F(9))
 
-#шаблон 27
+# шаблон 27
 # def dist(x1,y1,x2,y2):
 #   return ((x1-x2)**2+(y1-y2)**2)**0.5
 #
@@ -1254,7 +1246,7 @@ from turtledemo.sorting_animate import enable_keys
 #                 break
 # print(r)
 
-#dbscan
+# dbscan
 # from math import dist
 # def cent(cl):
 #     minr=10**10
@@ -1323,7 +1315,7 @@ from turtledemo.sorting_animate import enable_keys
 # print(sum(r2)/len(r2)*10_000)
 # f.close()
 
-#5
+# 5
 # res=[]
 # for n in range(4,1000):
 #     r = bin(n)[2:]
@@ -1334,7 +1326,7 @@ from turtledemo.sorting_animate import enable_keys
 #         r = r + (bin((n%3)*3)[2::])
 #     if int(r,2)>151:
 #         res.append(int(r,2))
-#print(min(res)) #смотри не первое вхождение, а все
+# print(min(res)) #смотри не первое вхождение, а все
 
 # res=[]
 # for n in range(3,1000):
@@ -1345,7 +1337,7 @@ from turtledemo.sorting_animate import enable_keys
 #         res.append(n)
 # print(min(res))
 
-#27 старое
+# 27 старое
 # кратно 6
 # f=open('files/27_1B.txt')
 # res,k1,k2,k3,k6=0,0,0,0,0
@@ -1403,8 +1395,8 @@ from turtledemo.sorting_animate import enable_keys
 #         k9+=1
 # print(res)
 
-#не кратно 14
-#f=open('files/27_1B.txt')
+# не кратно 14
+# f=open('files/27_1B.txt')
 # res,k1,k2,k7,k14=0,0,0,0,0
 # kp=0
 # n=int(f.readline())
@@ -1425,7 +1417,7 @@ from turtledemo.sorting_animate import enable_keys
 #     kp+=i
 # print(kp-res)
 
-#сумма кратна 91
+# сумма кратна 91
 # f=open('C:/Users/tolab/PycharmProjects/EGE/matrix/files/27_1B.txt')
 # ost=[0]*91
 # res=0
@@ -1437,7 +1429,7 @@ from turtledemo.sorting_animate import enable_keys
 #     ost[ost91]+=1
 # print(res)
 
-#минимальная сумма кратна 93
+# минимальная сумма кратна 93
 # f=open('C:/Users/tolab/PycharmProjects/EGE/matrix/files/27_1B.txt')
 # ost=[10**10]*93
 # res=0
@@ -1453,7 +1445,7 @@ from turtledemo.sorting_animate import enable_keys
 #         ost[ost93]=a
 # print(mins)
 
-#максимальна кратна 97
+# максимальна кратна 97
 # f=open('C:/Users/tolab/PycharmProjects/EGE/matrix/files/27_1B.txt')
 # ost=[0]*97
 # n=int(f.readline())
@@ -1468,31 +1460,48 @@ from turtledemo.sorting_animate import enable_keys
 # print(maxs)
 
 from itertools import *
-# i=1
-# for a in product('АЛПЦЯ',repeat=5):
-#     if a.count('А')<=1 and a.count('П')==2 and 'Л' not in a:
-#         print(i)
-#         break
-#     i+=1
-#
+
+# i = 0
+# for a in product(sorted('парус'), repeat=6):
+#     if a.count('у')==1:
+#         if (a.index('у')==0 and a[1]!='а') or (a.index('у')==6 and a[-1]!='а') or (a[a.index('у')-2]!='а' and a[a.index('у')]!='а'):
+#             print(a)
+#             i += 1
+# print(i)
+
 # print(abs(int('23100',4)-int('31020',4))+1)
 
-def ch_ncht(a):
-    flag=-1
-    for i in a:
-        if flag==-1:
-            flag= int(i)%2
-        elif flag==int(i)%2:
-            return False
-        else:
-            flag=int(i)%2
-    return True
 
-i=0
-for a in product('0123456789',repeat=8):
-    if a[0]!='0' and (a[-1]=='5' or a[-1]=='0'):
-        if len(a)==len(set(a)):
-            if ch_ncht(a):
-                i+=1
-                print(a,3)
-print(i)
+# def uni(x):
+#     tmp=set(x)
+#     for i in tmp:
+#         if x.count(i)>4:
+#             return False
+#     return True
+#
+# counter = 0
+# nch='1357'
+# ch='2468'
+# for n in product(nch, ch, nch, ch, nch, ch, nch, ch, nch, ch, nch):
+#     if uni(n):
+#         counter+=1
+# print(counter*2)
+
+def trs(x):
+    res=''
+    while x>0:
+        res=str(x%3)+res
+        x=x//3
+    return res
+
+
+for n in range(1,1000):
+    r=trs(n)
+
+    if n%3==0:
+        r='1'+r+'02'
+    else:
+        r+=trs(n%3*4)
+
+    if int(r,3)<199:
+        print(int(r,3),n)
