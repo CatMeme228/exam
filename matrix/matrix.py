@@ -1487,21 +1487,28 @@ from itertools import *
 #         counter+=1
 # print(counter*2)
 
-def trs(x):
-    res=''
-    while x>0:
-        res=str(x%3)+res
-        x=x//3
-    return res
+# def trs(x):
+#     res=''
+#     while x>0:
+#         res=str(x%3)+res
+#         x=x//3
+#     return res
+#
+#
+# for n in range(1,1000):
+#     r=trs(n)
+#
+#     if n%3==0:
+#         r='1'+r+'02'
+#     else:
+#         r+=trs(n%3*4)
+#
+#     if int(r,3)<199:
+#         print(int(r,3),n)
 
-
-for n in range(1,1000):
-    r=trs(n)
-
-    if n%3==0:
-        r='1'+r+'02'
-    else:
-        r+=trs(n%3*4)
-
-    if int(r,3)<199:
-        print(int(r,3),n)
+def f (s,e):
+    if s==e: return True
+    if s>e: return False
+    # if s==27: return False
+    return f(s+1,e)+f(s*2,e)+f(s+3,e)
+print(f(4,10)*f(10,20))

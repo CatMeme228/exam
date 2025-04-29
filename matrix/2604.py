@@ -187,11 +187,11 @@
 #     return f(s-2,e)+f(s//2,e)
 # print(f(38,16)*f(16,2))
 
-# import re
-# f=open('2604files/24.txt')
-# s=f.readline()
-# res=re.findall(r'(?:0|[6-9][06-9]*)(?:[-*](?:0|[6-9][06-9]))',s)
-# print(len(max(res, key=len)))
+import re
+f=open('2604files/24.txt')
+s=f.readline()
+res=re.findall(r'(?:0|[6-9][06-9]*)(?:[-*](?:0|[6-9][06-9]))',s)
+print(res)
 
 # def prime(x):
 #     for i in range(2, int(x**0.5)+1):
