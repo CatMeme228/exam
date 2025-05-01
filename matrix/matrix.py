@@ -1506,9 +1506,44 @@ from itertools import *
 #     if int(r,3)<199:
 #         print(int(r,3),n)
 
-def f (s,e):
-    if s==e: return True
-    if s>e: return False
-    # if s==27: return False
-    return f(s+1,e)+f(s*2,e)+f(s+3,e)
-print(f(4,10)*f(10,20))
+# def f (s,e):
+#     if s==e: return True
+#     if s>e: return False
+#     # if s==27: return False
+#     return f(s+1,e)+f(s*2,e)+f(s+3,e)
+# print(f(4,10)*f(10,20))
+
+# x=[]
+# tmp='00000000'
+# for i in range(9):
+#     x.append(int(tmp,2))
+#     tmp=tmp.replace('0','1',1)
+
+from ipaddress import *
+
+
+# for x in range(255,0,-1):
+#     r = 0
+#     l = 0
+#     for ip in ip_network(f'254.127.{x}.9/255.255.240.0',0):
+#         ip=str(ip).split('.')
+#         l+=1
+#         if bin(int(ip[0]))[2::].count('1')+bin(int(ip[1]))[2::].count('1')>=bin(int(ip[2]))[2::].count('1')+bin(int(ip[3]))[2::].count('1'):
+#             r+=1
+#     if l==r:
+#         print(x)
+#         break
+
+# r=0
+# for host in ip_network('106.184.0.0/255.248.0.0',0):
+#     if sum([bin(int(x))[2::].count('1') for x in str(host).split('.')])%2!=0:
+#         r+=1
+# print(r)
+
+# for mask in range(1, 32):
+#     if ip_network(f"118.187.59.255/{mask}", False) != ip_network(f"118.187.65.115/{mask}", False):
+#         print(mask)
+#         break
+
+for host in ip_network('218.194.82.148/255.255.255.192',0).hosts():
+    print(host)
