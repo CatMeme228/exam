@@ -4,6 +4,8 @@
 #     s=str(i)
 #     if fnmatch(s, "2*1?71") and i%1991==0:
 #         print(i, i//1991)
+from operator import indexOf
+
 
 # from fnmatch import *
 # for i in range(3123, 10**8+1, 3123):
@@ -1548,186 +1550,252 @@
 # for host in ip_network('218.194.82.148/255.255.255.192',0).hosts():
 #     print(host)
 
-from math import dist
+# from math import dist
 
-def cent(cl):
-    minr=10**10
-    for p in cl:
-        s=sum([dist(p,p0) for p0 in cl])
-        if minr>s:
-            minr=s
-            res=p
-    return res
+# def cent(cl):
+#     minr=10**10
+#     for p in cl:
+#         s=sum([dist(p,p0) for p0 in cl])
+#         if minr>s:
+#             minr=s
+#             res=p
+#     return res
+# #
+# f=open('web_files/1_27_A.txt')
+# f.readline()
+# a1,a2=[],[]
+# for s in f:
+#     s=s.replace(',', '.').split()
+#     s=[float(x) for x in s]
+#     if s[1]>2:
+#         a1.append(s)
+#     else:
+#         a2.append(s)
+# f.close()
+# res1=cent(a1)
+# res2=cent(a2)
+# print((res1[0]+res2[0])/2*10_000)
+# print((res1[1]+res2[1])/2*10_000)
 #
-f=open('web_files/1_27_A.txt')
-f.readline()
-a1,a2=[],[]
-for s in f:
-    s=s.replace(',', '.').split()
-    s=[float(x) for x in s]
-    if s[1]>2:
-        a1.append(s)
-    else:
-        a2.append(s)
-f.close()
-res1=cent(a1)
-res2=cent(a2)
-print((res1[0]+res2[0])/2*10_000)
-print((res1[1]+res2[1])/2*10_000)
+# f=open('web_files/1_27_B.txt')
+# f.readline()
+# a1,a2,a3=[],[],[]
+# for s in f:
+#     s=s.replace(',', '.').split()
+#     s=[float(x) for x in s]
+#     if s[0]<10:
+#         a1.append(s)
+#     else:
+#         if s[0]>20:
+#             a2.append(s)
+#         else:
+#             a3.append(s)
+# f.close()
+# res1=cent(a1)
+# res2=cent(a2)
+# res3=cent(a3)
+# print((res1[0]+res2[0]+res3[0])/3*10_000)
+# print((res1[1]+res2[1]+res3[1])/3*10_000)
+#
+# from math import dist
+#
+# def anticent(cl):
+#     maxr = 0
+#     for p in cl:
+#         s = sum([dist(p, p0) for p0 in cl])
+#         if s > maxr:
+#             maxr = s
+#             res = p
+#     return res
+#
+#
+# f = open('web_files/27_7_2A.txt')
+# a1, a2 = [], []
+# for s in f:
+#     s = s.replace(',', '.').split()
+#     s = [float(x) for x in s]
+#     if s[1] > 3:
+#         a1.append(s)
+#     else:
+#         a2.append(s)
+# f.close()
+# r1 = anticent(a1)
+# r2 = anticent(a2)
+# print((r1[0] + r2[0]) / 2 * 10_000)
+# print((r1[1] + r2[1]) / 2 * 10_000)
+#
+# f = open('web_files/27_7_2B.txt')
+# a1, a2, a3 = [], [], []
+# for s in f:
+#     s = s.replace(',', '.').split()
+#     s = [float(x) for x in s]
+#     if s[1] > 7:
+#         a1.append(s)
+#     else:
+#         if s[1] < 4:
+#             a2.append(s)
+#         else:
+#             a3.append(s)
+# f.close()
+# r1 = anticent(a1)
+# r2 = anticent(a2)
+# r3 = anticent(a3)
+# print((r1[0] + r2[0] + r3[0]) / 3 * 10_000)
+# print((r1[1] + r2[1] + r3[1]) / 3 * 10_000)
+#
+# from math import dist
+# def kray(cl1, cl2):
+#     minr = 10 ** 10
+#     for p in cl1:
+#         s = min([dist(p, p0) for p0 in cl2])
+#         if s < minr:
+#             minr = s
+#             res = p
+#     return res
+#
+#
+# f = open('web_files/27_7_3A.txt')
+# a1, a2 = [], []
+# for s in f:
+#     s = s.replace(',', '.').split()
+#     s = [float(x) for x in s]
+#     if s[0] > 4:
+#         a1.append(s)
+#     else:
+#         a2.append(s)
+# f.close()
+# r1 = kray(a1, a2)
+# r2 = kray(a2, a1)
+# print((r1[0] + r2[0]) / 2 * 10_000)
+# print((r1[1] + r2[1]) / 2 * 10_000)
+#
+# f = open('web_files/27_7_3B.txt')
+# a1, a2, a3 = [], [], []
+# for s in f:
+#     s = s.replace(',', '.').split()
+#     s = [float(x) for x in s]
+#     if s[0] < 2:
+#         a1.append(s)
+#     else:
+#         if s[1] > 5:
+#             a2.append(s)
+#         else:
+#             a3.append(s)
+# f.close()
+# r12 = kray(a1, a2)
+# r13 = kray(a1, a3)
+# r21 = kray(a2, a1)
+# r23 = kray(a2, a3)
+# r31 = kray(a3, a1)
+# r32 = kray(a3, a2)
+# print((r12[0] + r13[0] + r21[0] + r23[0] + r31[0] + r32[0]) / 6 * 10_000)
+# print((r12[1] + r13[1] + r21[1] + r23[1] + r31[1] + r32[1]) / 6 * 10_000)
+#
+#
+# from math import dist
+#
+# def cent(cl):
+#     minr=10**10
+#     for p in cl:
+#         s= sum([dist(p,p0) for p0 in cl])
+#         if minr>s:
+#             minr=s
+#             res=p
+#     return res
+#
+# f=open('web_files/27_7_4A.txt')
+#
+# a1, a2 = [], []
+# for s in f:
+#     s = s.replace(',', '.').split()
+#     s = [float(x) for x in s]
+#     if 0.75*s[0]-(11/4)<s[1]<2*s[0]:
+#         a1.append(s)
+#     elif 4*s[0]-28<s[1]<0.75*s[0]-(11/4):
+#         a2.append(s)
+# f.close()
+# r1 = cent(a1)
+# r2 = cent(a2)
+# print((r1[0] + r2[0]) / 2 * 10_000)
+# print((r1[1] + r2[1]) / 2 * 10_000)
+#
+# f=open('web_files/27_7_4B.txt')
+# a1, a2,a3,a4 = [], [],[],[]
+# for s in f:
+#     s = s.replace(',', '.').split()
+#     s = [float(x) for x in s]
+#     if 0.75*s[0]-(11/4)<s[1]<2*s[0]:
+#         a1.append(s)
+#     elif 4*s[0]-28<s[1]<0.75*s[0]-(11/4):
+#         a2.append(s)
+# f.close()
+# r1 = cent(a1)
+# r2 = cent(a2)
+# print((r1[0] + r2[0]) / 2 * 10_000)
+# print((r1[1] + r2[1]) / 2 * 10_000)
 
-f=open('web_files/1_27_B.txt')
-f.readline()
-a1,a2,a3=[],[],[]
-for s in f:
-    s=s.replace(',', '.').split()
-    s=[float(x) for x in s]
-    if s[0]<10:
-        a1.append(s)
-    else:
-        if s[0]>20:
-            a2.append(s)
-        else:
-            a3.append(s)
-f.close()
-res1=cent(a1)
-res2=cent(a2)
-res3=cent(a3)
-print((res1[0]+res2[0]+res3[0])/3*10_000)
-print((res1[1]+res2[1]+res3[1])/3*10_000)
-
-from math import dist
-
-def anticent(cl):
-    maxr = 0
-    for p in cl:
-        s = sum([dist(p, p0) for p0 in cl])
-        if s > maxr:
-            maxr = s
-            res = p
+def change_sys(n, base):
+    alp = 'QWERTYUIOPASDFGHJKLZXCVBNM'
+    alp = '0 1 2 3 4 5 6 7 8 9'.split() + sorted(alp)+['$']
+    res = ''
+    while n > 0:
+        res = alp[n % base] + res
+        n = n // base
     return res
 
 
-f = open('web_files/27_7_2A.txt')
-a1, a2 = [], []
-for s in f:
-    s = s.replace(',', '.').split()
-    s = [float(x) for x in s]
-    if s[1] > 3:
-        a1.append(s)
-    else:
-        a2.append(s)
-f.close()
-r1 = anticent(a1)
-r2 = anticent(a2)
-print((r1[0] + r2[0]) / 2 * 10_000)
-print((r1[1] + r2[1]) / 2 * 10_000)
+# r = 0
+# for x in range(1,10**100):
+#     n=7**150-7**100-x
+#     n=change_sys(n,5)
+#     zero=n.count('0')
+#     if zero>=r:
+#         r=zero
+#         print(x)
+#         break
 
-f = open('web_files/27_7_2B.txt')
-a1, a2, a3 = [], [], []
-for s in f:
-    s = s.replace(',', '.').split()
-    s = [float(x) for x in s]
-    if s[1] > 7:
-        a1.append(s)
-    else:
-        if s[1] < 4:
-            a2.append(s)
-        else:
-            a3.append(s)
-f.close()
-r1 = anticent(a1)
-r2 = anticent(a2)
-r3 = anticent(a3)
-print((r1[0] + r2[0] + r3[0]) / 3 * 10_000)
-print((r1[1] + r2[1] + r3[1]) / 3 * 10_000)
+# for a in range(1,10000):
+#     for x in '0123456789ABC':
+#         for y in '0123456789ABC':
+#             m=f'2{y}23{x}5'
+#             n=f'67{x}9{y}'
+#             if (int(m,15)+a)%int(n,13)==0:
+#                 print(a)
 
-from math import dist
-def kray(cl1, cl2):
-    minr = 10 ** 10
-    for p in cl1:
-        s = min([dist(p, p0) for p0 in cl2])
-        if s < minr:
-            minr = s
-            res = p
-    return res
+# res=4*7**24+6*7**13+5*49**4+2*343**2+10-(1+5*49**4+2*343**2+10)
+# res=change_sys(res, 7)
+# print(res.count('6')>res.count('0'), (1+5*49**4+2*343**2+10))
 
+# for x in '0123456789':
+#     n1 = 1 * int(f'123{x}5') + 5
+#     n2 = 1 * int(f'1{x}233') + 5
+#     if (n1+n2)%14==0:
+#         print((n1+n2)/14)
+# for x in '0123456789ABCDEFGHIJK':
+#     if all((int(f'12{y}{x}9',21) + int(f'36{y}99',21))%18==0 for y in '0123456789ABCDEFGHIJK'):
+#         print((int(f'125{x}9',21) + int(f'36599',21))/18)
 
-f = open('web_files/27_7_3A.txt')
-a1, a2 = [], []
-for s in f:
-    s = s.replace(',', '.').split()
-    s = [float(x) for x in s]
-    if s[0] > 4:
-        a1.append(s)
-    else:
-        a2.append(s)
-f.close()
-r1 = kray(a1, a2)
-r2 = kray(a2, a1)
-print((r1[0] + r2[0]) / 2 * 10_000)
-print((r1[1] + r2[1]) / 2 * 10_000)
+# def to10(num, alph):
+#     res=0
+#     for i in range(len(num)):
+#         res+=alph.index(num[i])*37**(len(num)-i-1)
+#     return res
+# a='0 1 2 3 4 5 6 7 8 9'.split() + sorted('QWERTYUIOPASDFGHJKLZXCVBNM')+['$']
+#
+# for x in a:
+#     n1=to10(f'F29{x}8EAD6',a)
+#     n2=to10(f'BA{x}DE0C1B',a)
+#     if (n1*n2)%36==0:
+#         print(to10(f'1{x}2',a))
 
-f = open('web_files/27_7_3B.txt')
-a1, a2, a3 = [], [], []
-for s in f:
-    s = s.replace(',', '.').split()
-    s = [float(x) for x in s]
-    if s[0] < 2:
-        a1.append(s)
-    else:
-        if s[1] > 5:
-            a2.append(s)
-        else:
-            a3.append(s)
-f.close()
-r12 = kray(a1, a2)
-r13 = kray(a1, a3)
-r21 = kray(a2, a1)
-r23 = kray(a2, a3)
-r31 = kray(a3, a1)
-r32 = kray(a3, a2)
-print((r12[0] + r13[0] + r21[0] + r23[0] + r31[0] + r32[0]) / 6 * 10_000)
-print((r12[1] + r13[1] + r21[1] + r23[1] + r31[1] + r32[1]) / 6 * 10_000)
+# for p in range(10,len(a)):
+#     for x in a[:p]:
+#         for y in a[:p]:
+#             n1=int(f'34{x}5',p)
+#             n2=int(f'{x}9{x}3',p)
+#             n3=int(f'{y}{y}68',p)
+#             if n1+n2==n3:
+#                 print(int(f'{y}{x}{x}{y}',p))
 
-
-from math import dist
-
-def cent(cl):
-    minr=10**10
-    for p in cl:
-        s= sum([dist(p,p0) for p0 in cl])
-        if minr>s:
-            minr=s
-            res=p
-    return res
-
-f=open('web_files/27_7_4A.txt')
-
-a1, a2 = [], []
-for s in f:
-    s = s.replace(',', '.').split()
-    s = [float(x) for x in s]
-    if 0.75*s[0]-(11/4)<s[1]<2*s[0]:
-        a1.append(s)
-    elif 4*s[0]-28<s[1]<0.75*s[0]-(11/4):
-        a2.append(s)
-f.close()
-r1 = cent(a1)
-r2 = cent(a2)
-print((r1[0] + r2[0]) / 2 * 10_000)
-print((r1[1] + r2[1]) / 2 * 10_000)
-
-f=open('web_files/27_7_4B.txt')
-a1, a2,a3,a4 = [], [],[],[]
-for s in f:
-    s = s.replace(',', '.').split()
-    s = [float(x) for x in s]
-    if 0.75*s[0]-(11/4)<s[1]<2*s[0]:
-        a1.append(s)
-    elif 4*s[0]-28<s[1]<0.75*s[0]-(11/4):
-        a2.append(s)
-f.close()
-r1 = cent(a1)
-r2 = cent(a2)
-print((r1[0] + r2[0]) / 2 * 10_000)
-print((r1[1] + r2[1]) / 2 * 10_000)
+print(sum([int(x,27) for x in change_sys(4**2018+7**2022+2024+13**2018+2020-17*4**2020,27)]))
+# print(bin(4**16+2**34-8)[2::].count('1'))
