@@ -4,7 +4,7 @@
 #     s=str(i)
 #     if fnmatch(s, "2*1?71") and i%1991==0:
 #         print(i, i//1991)
-from operator import indexOf
+
 
 
 # from fnmatch import *
@@ -1797,5 +1797,42 @@ def change_sys(n, base):
 #             if n1+n2==n3:
 #                 print(int(f'{y}{x}{x}{y}',p))
 
-print(sum([int(x,27) for x in change_sys(4**2018+7**2022+2024+13**2018+2020-17*4**2020,27)]))
-# print(bin(4**16+2**34-8)[2::].count('1'))
+# print(sum([int(x,27) for x in change_sys(4**2018+7**2022+2024+13**2018+2020-17*4**2020,27)]))
+# # print(bin(4**16+2**34-8)[2::].count('1'))
+#
+# print(bin(12), bin(99))
+# 1100011
+# 1100100
+
+def prime(x):
+    for i in range(2, int(x**0.5)+1):
+        if x%i==0:
+            return False
+    return True
+
+def dell(x):
+    res=[]
+    for i in range(2, int(x**0.5)+1):
+        if len(res)>=3:
+            break
+        if x%i==0:
+            res.append(i)
+            if x//i!=i:
+                res.append(x//i)
+    return res
+
+# c=0
+# for i in range(123456789,223456789+1):
+#     if i**0.5==int(i**0.5): # всего 5 делителей, значит число - целый квадрат
+#         m = dell(i)
+#         if len(m)==3:
+#             print(i,max(m))
+#             c+=1
+    # if c==5: break
+
+from fnmatch import *
+n=1991
+for i in range(n,10**9,n):
+    if fnmatch(str(i), '2*1?71'):
+        if i%17==0:
+            print(i, i//n)
