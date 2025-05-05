@@ -1804,22 +1804,22 @@ def change_sys(n, base):
 # 1100011
 # 1100100
 
-def prime(x):
-    for i in range(2, int(x**0.5)+1):
-        if x%i==0:
-            return False
-    return True
-
-def dell(x):
-    res=[]
-    for i in range(2, int(x**0.5)+1):
-        if len(res)>=3:
-            break
-        if x%i==0:
-            res.append(i)
-            if x//i!=i:
-                res.append(x//i)
-    return res
+# def prime(x):
+#     for i in range(2, int(x**0.5)+1):
+#         if x%i==0:
+#             return False
+#     return True
+#
+# def dell(x):
+#     res=[]
+#     for i in range(2, int(x**0.5)+1):
+#         if len(res)>=3:
+#             break
+#         if x%i==0:
+#             res.append(i)
+#             if x//i!=i:
+#                 res.append(x//i)
+#     return res
 
 # c=0
 # for i in range(123456789,223456789+1):
@@ -1830,9 +1830,21 @@ def dell(x):
 #             c+=1
     # if c==5: break
 
-from fnmatch import *
-n=1991
-for i in range(n,10**9,n):
-    if fnmatch(str(i), '2*1?71'):
-        if i%17==0:
-            print(i, i//n)
+# from fnmatch import *
+# n=1991
+# for i in range(n,10**9,n):
+#     if fnmatch(str(i), '2*1?71'):
+#         if i%17==0:
+#             print(i, i//n)
+
+def f(s,p):
+    if s<=19: return p%2==0
+    if p==0: return False
+    act=[f(s-2,p-1),f(s-5,p-1), f(s//3,p-1)]
+    return any(act) if (p-1)%2==0 else all(act)
+
+print([s for s in range(20,100) if f(s,1)])
+print([s for s in range(20,100) if f(s,2)])
+print([s for s in range(20,100) if f(s,3) and not f(s,1)])
+print([s for s in range(20,100) if f(s,4) and not f(s,2)])
+
