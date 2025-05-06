@@ -1837,14 +1837,43 @@ def change_sys(n, base):
 #         if i%17==0:
 #             print(i, i//n)
 
-def f(s,p):
-    if s<=19: return p%2==0
-    if p==0: return False
-    act=[f(s-2,p-1),f(s-5,p-1), f(s//3,p-1)]
-    return any(act) if (p-1)%2==0 else all(act)
+# def f(s,p):
+#     if s<=19: return p%2==0
+#     if p==0: return False
+#     act=[f(s-2,p-1),f(s-5,p-1), f(s//3,p-1)]
+#     return any(act) if (p-1)%2==0 else all(act)
+#
+# print([s for s in range(20,100) if f(s,1)])
+# print([s for s in range(20,100) if f(s,2)])
+# print([s for s in range(20,100) if f(s,3) and not f(s,1)])
+# print([s for s in range(20,100) if f(s,4) and not f(s,2)])
 
-print([s for s in range(20,100) if f(s,1)])
-print([s for s in range(20,100) if f(s,2)])
-print([s for s in range(20,100) if f(s,3) and not f(s,1)])
-print([s for s in range(20,100) if f(s,4) and not f(s,2)])
+from turtle import *
+size=30
+setworldcoordinates(-size,-size,size,size)
+tracer(0)
+left(90)
 
+for i in range(9):
+    forward(22)
+    right(90)
+    forward(6)
+    right(90)
+penup()
+forward(1)
+right(90)
+forward(5)
+left(90)
+pendown()
+for i in range(9):
+    forward(53)
+    right(90)
+    forward(75)
+    right(90)
+
+penup()
+for x in range(-size,size):
+    for y in range(-size,size):
+        setpos(x,y)
+        dot(4, 'red')
+done()
