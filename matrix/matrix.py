@@ -1848,32 +1848,132 @@ def change_sys(n, base):
 # print([s for s in range(20,100) if f(s,3) and not f(s,1)])
 # print([s for s in range(20,100) if f(s,4) and not f(s,2)])
 
-from turtle import *
-size=30
-setworldcoordinates(-size,-size,size,size)
-tracer(0)
-left(90)
+# from turtle import *
+# size=30
+# setworldcoordinates(-size,-size,size,size)
+# tracer(0)
+# left(90)
+#
+# for i in range(9):
+#     forward(22)
+#     right(90)
+#     forward(6)
+#     right(90)
+# penup()
+# forward(1)
+# right(90)
+# forward(5)
+# left(90)
+# pendown()
+# for i in range(9):
+#     forward(53)
+#     right(90)
+#     forward(75)
+#     right(90)
+#
+# penup()
+# for x in range(-size,size):
+#     for y in range(-size,size):
+#         setpos(x,y)
+#         dot(4, 'red')
+# done()
 
-for i in range(9):
-    forward(22)
-    right(90)
-    forward(6)
-    right(90)
-penup()
-forward(1)
-right(90)
-forward(5)
-left(90)
-pendown()
-for i in range(9):
-    forward(53)
-    right(90)
-    forward(75)
-    right(90)
+#множество C
+import re
+# f=open('web_files/24re_1.txt')
+# s=f.readline()
+# f.close()
+# print(len(max(re.findall(r'C+',s))))
+#
+# f=open('web_files/24re_2.txt')
+# s=f.readline()
+# f.close()
+# a=re.findall(r'[^Z]+',s)
+# print(len(max(a,key=len)))
+#
+# f=open('web_files/24re_3.txt')
+# s=f.readline()
+# f.close()
+# a=re.findall(r'[ABC]*',s)
+# print(len(max(a,key=len)))
+#
+# f=open('web_files/24re_4.txt')
+# s=f.readline().strip()
+# f.close()
+# a = re.split(r'(?<=1)(?=2)|(?<=2)(?=1)', s)
+#
+# print(len(max(a,key=len)))
+#
+# f=open('web_files/24re_5.txt')
+# s=f.readline().strip()
+# f.close()
+# a = re.findall(r'[^AE]*', s)
+#
+# print(len(max(a,key=len)))
 
-penup()
-for x in range(-size,size):
-    for y in range(-size,size):
-        setpos(x,y)
-        dot(4, 'red')
-done()
+# f=open('web_files/24re_6.txt')
+# k=0
+# for s in f:
+#     if re.findall(r'F.O',s):
+#         k+=1
+# f.close()
+# print(k)
+
+# f=open('web_files/24re_7.txt')
+# s=f.readline().strip()
+# f.close()
+# a = re.findall(r'(?:GDE|GED)+', s)
+# print(len(max(a,key=len))/3)
+
+# f=open('web_files/24re_8.txt')
+# s=f.readline().strip()
+# f.close()
+# a = re.findall(r'(?=[^A]*B[^A]*B[^A]*B)[^A]+', s)
+# print(len(max(a,key=len)))
+
+#AB 21 раз
+# f=open('web_files/24re_9.txt')
+# s=f.readline().strip()
+# f.close()
+# s=s.replace('AB','--')
+# a = re.finditer(r'(?=(([^-]*--){21}[^-]*))', s)
+# r=len(max([m[1] for m in a],key=len))
+# print(r+2)
+
+# f=open('web_files/24re_10.txt')
+# s=f.readline().strip()
+# f.close()
+# s=s.replace('AB','--')
+# a = re.finditer(r'(?=(([^-]*--){21}[^-]*))', s)
+# r=len(max([m[1] for m in a],key=len))
+# print(r+2)
+
+f=open('web_files/24_dosrok.txt').readline()
+reg='[1-9A-D][0-9A-D]*[02468AC]'
+res=0
+tmp=''
+# print(len(max([x.group() for x in re.finditer(reg,f)],key=len)))
+for a in f:
+    if a in '0123456789ABCD':
+        tmp+=a
+        if tmp[-1] in '02468AC':
+            if tmp[0]=='0':
+                res=max(len(tmp)-1, res)
+            else:
+                res=max(len(tmp),res)
+    else:
+        tmp=''
+print(res)
+
+
+#ШАБЛОНИЩЕ НА 2 КУЧИ!!!!!
+# from math import ceil
+# def f(s1,s2,p):
+#     if (s1+s2)<=40: return p%2==0
+#     if p==0: return False
+#     act=[f(s1-1,s2,p-1), f(ceil(s1/2),s2,p-1), f(s1,s2-1,p-1), f(s1,ceil(s2/2),p-1)]
+#     return any(act) if (p-1)%2==0 else all(act)
+#
+# print([s for s in range(21,100) if f(20,s,1)])
+# print([s for s in range(21,100) if f(20,s,3) and not(f(20,s,1))])
+# print([s for s in range(21,100) if f(20,s,4) and not(f(20,s,2))])
