@@ -1948,32 +1948,60 @@ import re
 # r=len(max([m[1] for m in a],key=len))
 # print(r+2)
 
-f=open('web_files/24_dosrok.txt').readline()
-reg='[1-9A-D][0-9A-D]*[02468AC]'
-res=0
-tmp=''
-# print(len(max([x.group() for x in re.finditer(reg,f)],key=len)))
-for a in f:
-    if a in '0123456789ABCD':
-        tmp+=a
-        if tmp[-1] in '02468AC':
-            if tmp[0]=='0':
-                res=max(len(tmp)-1, res)
-            else:
-                res=max(len(tmp),res)
-    else:
-        tmp=''
-print(res)
+# f=open('web_files/24_dosrok.txt').readline()
+# reg='[1-9A-D][0-9A-D]*[02468AC]'
+# res=0
+# tmp=''
+# # print(len(max([x.group() for x in re.finditer(reg,f)],key=len)))
+# for a in f:
+#     if a in '0123456789ABCD':
+#         tmp+=a
+#         if tmp[-1] in '02468AC':
+#             if tmp[0]=='0':
+#                 res=max(len(tmp)-1, res)
+#             else:
+#                 res=max(len(tmp),res)
+#     else:
+#         tmp=''
+# print(res)
+
+
+# def f(s,p):
+#     if s>=83: return p%2!=0
+#     if s>=34: return p%2==0
+#     if p==0: return False
+#     act=[f(s+2,p-1), f(s*3,p-1)]
+#     return any(act) if (p-1)%2==0 else all(act)
 
 
 #ШАБЛОНИЩЕ НА 2 КУЧИ!!!!!
 # from math import ceil
 # def f(s1,s2,p):
-#     if (s1+s2)<=40: return p%2==0
+#     if (s1+s2)>=263: return p%2==0
 #     if p==0: return False
-#     act=[f(s1-1,s2,p-1), f(ceil(s1/2),s2,p-1), f(s1,s2-1,p-1), f(s1,ceil(s2/2),p-1)]
+#     act=[f(s1+1,s2,p-1), f(s1*2,s2,p-1), f(s1,s2+1,p-1), f(s1, s2*2,p-1)]
 #     return any(act) if (p-1)%2==0 else all(act)
-#
-# print([s for s in range(21,100) if f(20,s,1)])
-# print([s for s in range(21,100) if f(20,s,3) and not(f(20,s,1))])
-# print([s for s in range(21,100) if f(20,s,4) and not(f(20,s,2))])
+# #litteraly 1984
+# d=245+1
+# k=17
+# print([s for s in range(1,d) if f(k,s,2)])
+# print([s for s in range(1,d) if f(k,s,3) and not(f(k,s,1))])
+# print([s for s in range(1,d) if f(k,s,4) and not(f(k,s,2))])
+
+from math import dist
+def f(s,p,last):
+    if s>=34: return p%2==0
+    if p==0: return False
+    if last==0:
+        act=[f(s+1,p-1,1), f(s+2,p-1,2), f(s*2,p-1,3)]
+    elif last==1:
+        act = [f(s + 2, p - 1, 2), f(s * 2, p - 1, 3)]
+    elif last==2:
+        act = [f(s + 1, p - 1, 1), f(s * 2, p - 1, 3)]
+    elif last==3:
+        act = [f(s + 1, p - 1, 1), f(s + 2, p - 1, 2)]
+    return any(act) if (p-1)%2==0 else all(act)
+
+print([s for s in range(1,34) if f(s,2,0)])
+print([s for s in range(1,34) if f(s,3,0) and not f(s,1,0)])
+print([s for s in range(1,34) if f(s,4,0) and not f(s,2,0)])
