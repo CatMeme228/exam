@@ -1989,19 +1989,186 @@ import re
 # print([s for s in range(1,d) if f(k,s,4) and not(f(k,s,2))])
 
 from math import dist
-def f(s,p,last):
-    if s>=34: return p%2==0
-    if p==0: return False
-    if last==0:
-        act=[f(s+1,p-1,1), f(s+2,p-1,2), f(s*2,p-1,3)]
-    elif last==1:
-        act = [f(s + 2, p - 1, 2), f(s * 2, p - 1, 3)]
-    elif last==2:
-        act = [f(s + 1, p - 1, 1), f(s * 2, p - 1, 3)]
-    elif last==3:
-        act = [f(s + 1, p - 1, 1), f(s + 2, p - 1, 2)]
-    return any(act) if (p-1)%2==0 else all(act)
+# def f(s,p,last):
+#     if s>=34: return p%2==0
+#     if p==0: return False
+#     if last==0:
+#         act=[f(s+1,p-1,1), f(s+2,p-1,2), f(s*2,p-1,3)]
+#     elif last==1:
+#         act = [f(s + 2, p - 1, 2), f(s * 2, p - 1, 3)]
+#     elif last==2:
+#         act = [f(s + 1, p - 1, 1), f(s * 2, p - 1, 3)]
+#     elif last==3:
+#         act = [f(s + 1, p - 1, 1), f(s + 2, p - 1, 2)]
+#     return any(act) if (p-1)%2==0 else all(act)
+#
+# print([s for s in range(1,34) if f(s,2,0)])
+# print([s for s in range(1,34) if f(s,3,0) and not f(s,1,0)])
+# print([s for s in range(1,34) if f(s,4,0) and not f(s,2,0)])
 
-print([s for s in range(1,34) if f(s,2,0)])
-print([s for s in range(1,34) if f(s,3,0) and not f(s,1,0)])
-print([s for s in range(1,34) if f(s,4,0) and not f(s,2,0)])
+# f=open('web_files/24_4.txt')
+# s=f.readline().strip()
+# f.close()
+# s=s.replace('E', 'D')
+# s=s.split('D')
+# print(len(max(s, key = len)))
+
+# f=open('web_files/24_7.txt')
+# s=f.readline().strip()
+# f.close()
+# s=s.replace('QQ', 'Q Q')
+# s=s.split()
+# print(len(max(s, key = len)))
+
+# f=open('web_files/24_2_1.txt')
+# s=f.readline().strip()
+# f.close()
+# s=s.replace('R', 'Q')
+# s=s.replace('W','Q')
+# s=s.split('Q')
+# print(len(max(s, key = len)))
+
+# f=open('web_files/24_2_4.txt')
+# s=f.readline()
+# f.close()
+# s = s.replace('O','N')
+# s = s.replace('P','N')
+# s=s.replace('NN', 'N N')
+# s=s.replace('NN', 'N N')
+# s=s.split()
+#
+# print(len(max(s, key = len)))
+
+# f=open('web_files/24_2_5.txt')
+# s=f.readline()
+# f.close()
+# s=s.replace('D', 'C')
+# s=s.replace('F', 'C')
+# s=s.replace('O', 'A')
+# s=s.replace('CCA','*')
+# s=s.replace('C','A')
+# s=s.split('A')
+# print(len(max(s, key = len)))
+
+# f=open('web_files/24_2_6.txt')
+# s=f.readline()
+# f.close()
+# s=s.replace('GDE', '*')
+# s=s.replace('GED', '*')
+# s=s.replace('E','G')
+# s=s.replace('D','G')
+# s=s.split('G')
+# print(len(max(s, key = len)))
+
+# f=open('web_files/24_2_8.txt')
+# s=f.readline()
+# f.close()
+# res,t=1,1
+# for i in range(len(s)-1):
+#     if s[i]<=s[i+1]:
+#         t+=1
+#     else:
+#         res=max(res,t)
+#         t=1
+# print(res)
+
+# f=open('web_files/24_2_10.txt')
+# s=f.readline()
+# f.close()
+# res,t=0,0
+# for i in s:
+#     if i in '0123456789ABCDEFGH':
+#         t+=1
+#     else:
+#         res=max(res,t)
+#         t=0
+# print(res)
+
+# f=open('web_files/24_01.txt')
+# res=0
+# for s in f:
+#     if s.count('E')>s.count('A'):
+#         res+=1
+# print(res)
+
+# f=open('web_files/24_30.txt')
+# res=0
+# for s in f:
+#     if s.count('YZ')>1:
+#         res+=1
+# print(res)
+
+#35 раз
+# f=open('web_files/24_3_7.txt')
+# s=f.readline().strip()
+# f.close()
+# s=s.split('A')
+# k=35
+# kmin=10**10
+# for i in range(1, len(s)-k+2):
+#     tk=k
+#     for j in range(i, i+k-1):
+#         tk+=len(s[j])
+#     kmin=min(kmin,tk)
+# print(kmin)
+
+#не менее 500
+# f=open('web_files/24_3_8.txt')
+# s=f.readline().strip()
+# f.close()
+# s=s.split('A')
+# k=500
+# tk=k
+# for i in range(1,k):
+#     tk+=len(s[i])
+# mink=tk
+# for i in range(2, len(s)-k+1):
+#     tk=tk-len(s[i-1])+len(s[i+k-2])
+#     mink=min(mink,tk)
+# print(mink)
+
+# f=open('web_files/24_3_10.txt')
+# sn=f.readline().strip()
+# f.close()
+# sn=sn.split('E')
+# maxt=0
+# for x in sn:
+#     s=x
+#     s=s.split('A')
+#     k=700
+#     su=k
+#     if len(s)>k+1:
+#         for i in range(0,k+1):
+#             su+=len(s[i])
+#         maxt=su
+#         for i in range(0,len(s)-(k+1)):
+#             su=su-len(s[i])+len(s[i+k+1])
+#             maxt=max(maxt,su)
+# print(maxt)
+
+# f=open('web_files/24_14.txt')
+# s=f.readline().strip()
+# import re
+# a=re.findall(r'(?:[7-9][07-9]*)(?:[-*](?:[7-9][07-9]*))*', s)
+# print(len(max(a, key=len)))
+
+s = open('web_files/24-15.txt').read()
+
+s = s.replace('*0', '*!').replace('+0', '+!')
+s = s.replace('*+', ' ').replace('+*', ' ').replace('**', ' ').replace('++', ' ')
+a = [c.strip('+').strip('*').split('+') for c in s.split(' ')]
+maxL = 0
+for c in a:
+    ts = -1
+    for r in range(len(c)):
+        if '!' in c[r]:
+            ts += len(c[r]) + 1
+        elif '0*' in c[r]:
+            ts = len(c[r][c[r].index('0*'):])
+        elif len(c[r]) > 0 and c[r][-1] == '0':
+            ts = 1
+        else:
+            ts = -1
+        if ts > 1:
+            maxL = max(ts, maxL)
+print(maxL)
