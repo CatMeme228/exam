@@ -237,44 +237,170 @@ import string
 # print(len(res))
 # print(max(a)[0]-res[-2][1])
 
-from math import dist
 
-def cent(cl):
-    minr=10**10
-    for p in cl:
-        s=sum([dist(p,p0) for p0 in cl])
-        if minr>s:
-            minr=s
-            res=p
-    return res
+# from math import *
+# from turtle import *
+# from random import *
+# def visual(vsecl):
+#     tracer(0)
+#     screensize(1000,1000)
+#     c=60
+#     penup()
+#     for cl in vsecl:
+#         color= (random(), random(),random())
+#         for p in cl:
+#             goto(p[0]*c, p[1]*c)
+#             dot(10, color)
+#     exitonclick()
+#
+# def cent(cl):
+#     minr=10**10
+#     for p in cl:
+#         s=sum([dist(p,p0) for p0 in cl])
+#         if minr>s:
+#             minr =s
+#             res=p
+#     return res
+#
+# f=open('files/27b.txt')
+# a1=[[float(x) for x in s.replace(',', '.').split()] for s in f]
+# for e in range(1,100):
+#     vsecl = []
+#     a=a1[:]
+#     while len(a)>0:
+#         tcl=[a[-1]]
+#         a.pop()
+#         for p in tcl:
+#             for p1 in a[:]:
+#                 if dist(p,p1)<=e/10:
+#                     tcl.append(p1)
+#                     a.remove(p1)
+#         if len(tcl) > 10:
+#             vsecl.append(tcl)
+#     if len(vsecl)==3:
+#         visual(vsecl)
+#         res1,res2,k=0,0,0
+#         for cl in vsecl:
+#                 s=cent(cl)
+#                 res1+=s[0]
+#                 res2+=s[1]
+#                 k+=1
+#         print(res1/k*10_000, res2/k*10_000)
+#         break
 
-f=open('files/27a.txt')
-a1,a2=[],[]
-for s in f:
-    s=s.replace(',','.')
-    s=s.split()
-    s=[float(x) for x in s]
-    if s[1]>15:
-        a1.append(s)
-    else:
-        a2.append(s)
-r1=cent(a1)
-r2=cent(a2)
-print((r1[0]+r2[0])/2*10_000)
-print((r1[1]+r2[1])/2*10_000)
+# from math import *
+# from turtle import *
+# from random import *
+# def visual(vsecl):
+#     tracer(0)
+#     screensize(1000,1000)
+#     c=50
+#     penup()
+#     for cl in vsecl:
+#         color= (random(), random(),random())
+#         for p in cl:
+#             goto(p[0]*c, p[1]*c)
+#             dot(10, color)
+#     exitonclick()
+#
+# def sklad(cl):
+#     m=0
+#     for p in cl:
+#         st=[]
+#         for p1 in cl:
+#             if dist(p,p1)<=1:
+#                 st.append(p1)
+#         k2=0
+#         for p2 in cl:
+#             st1=[]
+#             if p2!=p1:
+#                 for p1 in cl:
+#                     if p1 not in st:
+#                         if dist(p2,p1)<=1:
+#                             st.append(p1)
+#                 k2=max(k2,len(st1))
+#         m=max(m+k2,len(st))
+#     return m
+#
+# f=open('files/27_105A.txt')
+# a1=[[float(x) for x in s.replace(',', '.').split()] for s in f]
+# e=1
+# vsecl = []
+# a=a1[:]
+# while len(a)>0:
+#         tcl=[a[-1]]
+#         a.pop()
+#         for p in tcl:
+#             for p1 in a[:]:
+#                 if dist(p,p1)<=e:
+#                     tcl.append(p1)
+#                     a.remove(p1)
+#         vsecl.append(tcl)
+#
+# visual(vsecl)
+# res1,res2,k=0,0,0
+# for cl in vsecl:
+#         s=sklad(cl)
+#         print(s)
+#         res1+=s[0]
+#         res2+=s[1]
+#         k+=1
+# print(res1/k*10_000, res2/k*10_000)
 
-f=open('files/27b.txt')
-a1,a2,a3=[],[],[]
-for s in f:
-    s=s.replace(',','.')
-    s=s.split()
-    s=[float(x) for x in s]
-    if s[1]>15:
-        a1.append(s)
-    else:
-        a2.append(s)
-r1=cent(a1)
-r2=cent(a2)
-r3=cent(a3)
-print((r1[0]+r2[0]+r3[0])/3*10_000)
-print((r1[1]+r2[1]+r3[0])/3*10_000)
+from re import *
+# f=open('files/24var02.txt')
+# s=f.readline().strip()
+# a=findall(r'(?:0|[5-8][05-8]*)(?:[+-](?:0|[5-8][05-8]*))*',s)
+# print(len(max(a, key=len)))
+
+#равно 0
+# f=open('files/24_24rezerv0.txt')
+# s=f.readline().strip()
+# num=r'([1-9][0-9]*|0)'
+# pr= rf'({num}\*)*0(\*{num})*'
+# reg= rf'{pr}(\+{pr})*'
+# n=len(max([x.group() for x in finditer(reg,s)], key=len))
+# print(n)
+#
+# f=open('files/24_24rezerv0.txt')
+# s=f.readline().strip()
+# for x in '23456789':
+#     s=s.replace(x,'1')
+# m=0
+# for l in range(len(s)-1):
+#     if s[l]!='+' and s[l]!='*' and s[l]+s[l+1]!='01' and s[l]+s[l+1]!='00':
+#         for r in range(l+m, len(s)):
+#             st=s[l:r+1]
+#             if '++' not in st and '**' not in st and '+*' not in st and '*+' not in st and '+01' not in st and '+00' not in st and '*01' not in st and '*00' not in st:
+#                 if st[-1]!='+' and st[-1]!='*':
+#                     if eval(st)==0:
+#                         m=max(len(st),m)
+#             else:
+#                 break
+# print(m)
+
+#максимальная
+# f=open('files/24-280.txt')
+# s=f.readline()
+# m=0
+# for l in range(len(s)):
+#     for r in range(l+m, len(s)):
+#         st=s[l:r+1]
+#         if st.count('X')==5 and st.count('Y')==5 and st.count('Z')==5:
+#             m=max(m, len(st))
+#         elif st.count('X')>5 or st.count('Y')>5 or st.count('Z')>5:
+#             break
+# print(m)
+
+#минимальная
+f=open('files/24-280.txt')
+s=f.readline()
+m=290
+for l in range(len(s)):
+    for r in range(l+m,l,-1):
+        st=s[l:r+1]
+        if st.count('X')==5 and st.count('Y')==5 and st.count('Z')==5:
+            m=min(m, len(st))
+        elif st.count('X')<5 or st.count('Y')<5 or st.count('Z')<5:
+            break
+print(m)

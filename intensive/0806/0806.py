@@ -187,48 +187,48 @@ import string
 #     if fnmatch(str(i), '1?7246*1'):
 #         print(i)
 
-from math import dist
-
-def cent(cl):
-    minr=10**10
-    for p in cl:
-        s=sum([dist(p,p0) for p0 in cl])
-        if minr>s:
-            minr =s
-            res=p
-    return res
-
-f=open('27_7_A.txt')
-a1,a2=[],[]
-for s in f:
-    s=s.replace(',','.')
-    s=s.split()
-    s=[float(x) for x in s]
-    if s[1]>4:
-        a1.append(s)
-    elif s[0]>2:
-        a2.append(s)
-r1=cent(a1)
-r2=cent(a2)
-print(r1,r2)
-print((r1[0]+r2[0])/2*10_000)
-print((r1[1]+r2[1])/2*10_000)
-
-f=open('27_7_B.txt')
-a1,a2,a3=[],[],[]
-for s in f:
-    s=s.replace(',','.')
-    s=s.split()
-    s=[float(x) for x in s]
-    if -2<s[0]<2 and s[1]>1:
-        a1.append(s)
-    elif s[0]>2 and s[1]>0:
-        a2.append(s)
-    elif -2<s[0]<2 and s[1]<-1:
-        a3.append(s)
-r1=cent(a1)
-r2=cent(a2)
-r3=cent(a3)
-print(r1,r2,r3)
-print((r1[0]+r2[0]+r3[0])/3*10_000)
-print((r1[1]+r2[1]+r3[1])/3*10_000)
+# from math import dist
+#
+# def cent(cl):
+#     minr=10**10
+#     for p in cl:
+#         s=sum([dist(p,p0) for p0 in cl])
+#         if minr>s:
+#             minr =s
+#             res=p
+#     return res
+#
+# f=open('27_7_A.txt')
+# a1,a2=[],[]
+# for s in f:
+#     s=s.replace(',','.')
+#     s=s.split()
+#     s=[float(x) for x in s]
+#     if s[1]>4:
+#         a1.append(s)
+#     elif s[0]>2:
+#         a2.append(s)
+# r1=cent(a1)
+# r2=cent(a2)
+# print(r1,r2)
+# print((r1[0]+r2[0])/2*10_000)
+# print((r1[1]+r2[1])/2*10_000)
+#
+# f=open('27_7_B.txt')
+# a1,a2,a3=[],[],[]
+# for s in f:
+#     s=s.replace(',','.')
+#     s=s.split()
+#     s=[float(x) for x in s]
+#     if -2<s[0]<2 and s[1]>1:
+#         a1.append(s)
+#     elif s[0]>2 and s[1]>0:
+#         a2.append(s)
+#     elif -2<s[0]<2 and s[1]<-1:
+#         a3.append(s)
+# r1=cent(a1)
+# r2=cent(a2)
+# r3=cent(a3)
+# print(r1,r2,r3)
+# print((r1[0]+r2[0]+r3[0])/3*10_000)
+# print((r1[1]+r2[1]+r3[1])/3*10_000)
