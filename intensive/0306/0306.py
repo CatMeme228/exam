@@ -14,26 +14,26 @@
 #             if [f(**dict(zip(p,row))) for row in table]==[0,0,0]:
 #                 print(*p, sep='')
 
-res=10**10
-for n in range(1,1000):
-    r=bin(n)[2:]
-    if r[:2] == '00':
-        r = '11' + r[2:]
-    elif r[:2] == '01':
-        r = '10' + r[2:]
-    elif r[:2] == '10':
-        r = '01' + r[2:]
-    elif r[:2] == '11':
-        r = '00' + r[2:]
-
-    if r.count('1')%2==0:
-        r=r+'10'
-    else:
-        r=r+'11'
-    r=int(r,2)
-    if r>43:
-        res=min(r,res)
-print(res)
+# res=10**10
+# for n in range(1,1000):
+#     r=bin(n)[2:]
+#     if r[:2] == '00':
+#         r = '11' + r[2:]
+#     elif r[:2] == '01':
+#         r = '10' + r[2:]
+#     elif r[:2] == '10':
+#         r = '01' + r[2:]
+#     elif r[:2] == '11':
+#         r = '00' + r[2:]
+#
+#     if r.count('1')%2==0:
+#         r=r+'10'
+#     else:
+#         r=r+'11'
+#     r=int(r,2)
+#     if r>43:
+#         res=min(r,res)
+# print(res)
 
 # from turtle import *
 # size=20
@@ -84,12 +84,12 @@ print(res)
 #         s=s.replace('2222','11',1)
 # print(s)
 
-# from ipaddress import *
-# r=0
-# for ip in ip_network('192.168.32.48/255.255.255.240'):
-#     if sum([bin(int(x))[2:].count('1') for x in str(ip).split('.')])%2!=0:
-#         r+=1
-# print(r)
+from ipaddress import *
+r=0
+for ip in ip_network('192.168.32.48/255.255.255.240'):
+    if sum([bin(int(x))[2:].count('1') for x in str(ip).split('.')])%2!=0:
+        r+=1
+print(r)
 
 # def tr(x):
 #     res=''
